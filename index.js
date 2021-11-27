@@ -27,6 +27,10 @@ app.get("/", checkAuth, (req, res) => {
     res.render("index.ejs", { user: req.user });
 });
 
+app.get("/users", (req, res) => {
+    res.render("users.ejs");
+});
+
 app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`);
     connectToMongo();
