@@ -24,7 +24,7 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
     };
 
     const token = jwt.sign(userInToken, SECRET_KEY, {
-        expiresIn: '1h',
+        expiresIn: '1s',
     });
 
     res.cookie('token', token, {
