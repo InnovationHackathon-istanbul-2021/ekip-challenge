@@ -1,12 +1,12 @@
 const userModel = require("../models/user");
 
 const getUsers = async (request, response) => {
-    const orders = await userModel.find({});
+    const users = await userModel.find({});
 
-    if (orders.length > 0) {
-        response.status(200).json(orders);
+    if (users.length > 0) {
+        response.status(200).json(users);
     } else {
-        response.status(404).json('no orders found');
+        response.status(404).json('no users found');
     }
 };
 
