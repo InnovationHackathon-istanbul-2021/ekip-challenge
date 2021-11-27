@@ -14,19 +14,17 @@ passport.use(
             const currentUser = await userModel.findOne({ providerId: profile.id });
 
             if (currentUser) {
+                console.log('this user already exist', currentUser);
                 callBack(null, currentUser);
             } else {
-                const newUser = new User({
+                const newUser = new userModel({
                     email: profile._json.email,
                     name: profile.displayName,
-                    providerId: profile.id,
                     profilePicture: profile._json.picture,
-                    firstName: profile._json.given_name,
-                    lastName: profile._json.family_name,
-                    provider: profile.provider,
                 });
 
                 newUser.save();
+                console.log('new user created', newUser);
                 callBack(null, newUser);
             }
         }
