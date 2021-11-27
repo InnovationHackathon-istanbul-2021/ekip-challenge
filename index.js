@@ -26,6 +26,10 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+app.get("/users", (req, res) => {
+    res.render("users.ejs");
+});
+
 app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`);
     connectToMongo();
