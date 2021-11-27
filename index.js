@@ -9,6 +9,9 @@ const { checkAuth } = require('./middleware/auth');
 
 const apiRoutes = require('./routes');
 
+const path = require('path');
+
+
 
 const app = express();
 const port = process.env.NODE_LOCAL_PORT;
@@ -17,18 +20,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(cookieParser());
+app.use(express.static('assets'));
+// app.use('/public', express.static(path.join(__dirname, 'assets')));
 
 app.set("view engine", "ejs");
 app.set("views", "views");
 
+
 app.use('/api', apiRoutes);
 
-app.get("/", checkAuth, (req, res) => {
-    res.render("index.ejs", { user: req.user });
-});
-
-app.get("/users", (req, res) => {
-    res.render("users.ejs");
+app.get("/", (req, res) => {
+    res.render("index.ejs");
 });
 
 app.listen(port, () => {
