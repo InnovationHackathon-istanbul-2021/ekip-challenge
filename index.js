@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 
 const connectToMongo = require("./database/connection");
+const { checkAuth } = require('./middleware/auth');
 
 const apiRoutes = require('./routes');
 
@@ -22,8 +23,8 @@ app.set("views", "views");
 
 app.use('/api', apiRoutes);
 
-app.get("/", (req, res) => {
-    res.render("index.ejs");
+app.get("/", checkAuth, (req, res) => {
+    res.render("index.ejs", { user: req.user });
 });
 
 app.listen(port, () => {

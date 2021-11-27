@@ -11,7 +11,7 @@ const checkAuth = (req, res, next) => {
         req.user = loggedUser;
         next();
     } catch (error) {
-        res.clearCookie('token').sendStatus(401);
+        res.clearCookie('token').status(401).redirect('/api/auth/google');
     }
 };
 
