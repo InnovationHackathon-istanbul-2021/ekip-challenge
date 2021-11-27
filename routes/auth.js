@@ -21,10 +21,11 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
         name: name,
         email: email,
         profilePicture: profilePicture,
+        cart: []
     };
 
     const token = jwt.sign(userInToken, SECRET_KEY, {
-        expiresIn: '1h',
+        expiresIn: '1s',
     });
 
     res.cookie('token', token, {
@@ -42,11 +43,11 @@ routes.get('/myprofile', checkAuth, (req, res) => {
         email: email,
         profilePicture: profilePicture,
     };
-    res.status(200).json(clientUser);
+    res.status(200).render(clientUser);
 });
 
 routes.get('/logout', checkAuth, (req, res) => {
-    res.clearCookie('token').sendStatus(200).redirect('/');
+    res.clearCookie('token').status(200).redirect('/');
 });
 
 module.exports = routes;
