@@ -2,7 +2,7 @@ const userModel = require("../models/user");
 const orderModel = require("../models/order");
 const productModel = require("../models/product");
 
-const signupUser = async (req, res) => {
+const signUpUser = async (req, res) => {
     res.render("auth/signup");
 };
 
@@ -18,11 +18,21 @@ const getUsers = async (req, res) => {
     const users = await userModel.find({});
 
     if (users.length > 0) {
-        //response.status(200).json(users);
-        res.json(users);
+        res.status(200).json(users);
         // response.render("dashboard/users", { users: users });
     } else {
-        response.status(404).json('no users found');
+        res.status(404).json('no users found');
+    }
+};
+
+const getCustomers = async (req, res) => {
+    const users = await userModel.find({ role: 'customer' });
+
+    if (users.length > 0) {
+        res.status(200).json(users);
+        // response.render("dashboard/users", { users: users });
+    } else {
+        res.status(404).json('no users found');
     }
 };
 
@@ -57,7 +67,9 @@ const getProfile = async (req, res) => {
 
 module.exports = {
     getUsers,
-    signupUser,
+    signUpUser,
     signInUser,
-    userProfile
+    userProfile,
+    getProfile,
+    getCustomers
 };

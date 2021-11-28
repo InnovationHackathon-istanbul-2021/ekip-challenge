@@ -6,13 +6,17 @@ const SECRET_KEY = process.env.SECRET_KEY;
 const checkAuth = (req, res, next) => {
     const token = req.cookies.token;
 
-    try {
+    if (token) {
         const loggedUser = jwt.verify(token, SECRET_KEY);
         req.user = loggedUser;
+        console.log('there is token');
         next();
-    } catch (error) {
-        console.log(error);
-        res.clearCookie('token').status(401).redirect('/api/auth/google');
+        console.log('token next happened');
+    } else {
+        res.clearCookie('token').status(401);
+        console.log('there is not token');
+        next();
+        console.log('next is happened');
     }
 };
 

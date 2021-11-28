@@ -5,13 +5,10 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 
 const connectToMongo = require("./database/connection");
+const userModel = require('./models/user');
 const { checkAuth } = require('./middleware/auth');
 
 const apiRoutes = require('./routes');
-
-const path = require('path');
-
-
 
 const app = express();
 const port = process.env.NODE_LOCAL_PORT;
@@ -29,8 +26,20 @@ app.set("views", "views");
 
 app.use('/api', apiRoutes);
 
-app.get("/", (req, res) => {
-    res.render("index.ejs");
+app.get("/", checkAuth, async (req, res) => {
+    console.log('before render', req.user);
+    if (req.user) {
+        const user = await userModel.findOne({ _id: req.user.id });
+
+        console.log(user);
+        console.log('there is user', req.user);
+        console.log(typeof req.user);
+        res.render("index.ejs", { user: user });
+    } else {
+        console.log(typeof req.user);
+        console.log('there is no user', req.user);
+        res.render("index.ejs");
+    }
 });
 
 app.listen(port, () => {
