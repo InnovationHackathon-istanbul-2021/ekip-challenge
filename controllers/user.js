@@ -21,7 +21,7 @@ const getUsers = async (req, res) => {
         res.status(200).json(users);
         // response.render("dashboard/users", { users: users });
     } else {
-        response.status(404).json('no users found');
+        res.status(404).json('no users found');
     }
 };
 
@@ -32,7 +32,7 @@ const getCustomers = async (req, res) => {
         res.status(200).json(users);
         // response.render("dashboard/users", { users: users });
     } else {
-        response.status(404).json('no users found');
+        res.status(404).json('no users found');
     }
 };
 

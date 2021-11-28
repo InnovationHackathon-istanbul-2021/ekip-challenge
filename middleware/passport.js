@@ -21,7 +21,7 @@ passport.use(
                     username: profile.displayName.split(" ").join(''),
                     email: profile._json.email,
                     name: profile.displayName,
-                    profilePicture: profile._json.picture,
+                    picture: profile._json.picture,
                     providerID: profile.id
                 });
 
