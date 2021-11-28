@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="menu-item">
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="/api/product">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                                     <span class="svg-icon svg-icon-2">
@@ -91,7 +91,7 @@
                         </div>
 
                         <div class="menu-item">
-                            <a class="menu-link" href="#">
+                            <a class="menu-link" href="/api/order">
                                 <span class="menu-icon">
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                                     <span class="svg-icon svg-icon-2">
@@ -143,7 +143,7 @@
                             <div class="menu-sub menu-sub-accordion">
 
                                 <div class="menu-item">
-                                    <a class="menu-link" href="../../demo1/dist/apps/customers/list.html">
+                                    <a class="menu-link" href="/api/user/customers">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
@@ -188,8 +188,7 @@
                                     </span>
                                     <div class="menu-sub menu-sub-accordion">
                                         <div class="menu-item">
-                                            <a class="menu-link"
-                                                href="../../demo1/dist/apps/user-management/users/list.html">
+                                            <a class="menu-link" href="/api/user/">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -283,7 +282,7 @@
             <!--begin::Footer-->
             <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
                 <a href="#" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover"
-                    data-bs-dismiss-="click" title="200+ in-house components and 3rd-party plugins">
+                    data-bs-dismiss-="click" title="Customer Live Chat">
                     <span class="btn-label">Live Support</span>
                     <!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
                     <span class="svg-icon btn-icon svg-icon-2">
@@ -367,305 +366,272 @@
                         <!--end::Navbar-->
                         <!--begin::Topbar-->
                         <div class="d-flex align-items-stretch flex-shrink-0">
+
+
+
+
                             <!--begin::Toolbar wrapper-->
                             <div class="d-flex align-items-stretch flex-shrink-0">
                                 <!--begin::Search-->
+                                <% if(typeof user !='undefined' ) { %>
+                                    <div class="d-flex align-items-center py-1">
 
-                                <div class="d-flex align-items-center py-1">
-                                    <!--begin::Wrapper-->
-                                    <div class="me-4">
-                                        <!--begin::Menu-->
-                                        <a href="/api/user/signup"
-                                            class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
-                                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                                            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
-                                                        fill="black" />
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon-->Register / Login
-                                        </a>
-                                    </div>
-
-
-
-
-                                    <div class="me-4">
-                                        <!--begin::Menu-->
-                                        <a href="/api/user/cart"
-                                            class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
-                                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                                            <span class="svg-icon svg-icon-2 svg-icon-gray-500">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z"
-                                                        fill="black" />
-                                                    <path opacity="0.3"
-                                                        d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z"
-                                                        fill="black" />
-                                                    <path opacity="0.3"
-                                                        d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z"
-                                                        fill="black" />
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon-->Cart
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!--begin::User-->
-                                <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
-                                    <!--begin::Menu wrapper-->
-                                    <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
-                                        data-kt-menu-trigger="click" data-kt-menu-attach="parent"
-                                        data-kt-menu-placement="bottom-end">
-                                        <img src="<%=process.env.BASE_URL%>/media/avatars/150-26.jpg" alt="user" />
-                                    </div>
-                                    <!--begin::Menu-->
-                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
-                                        data-kt-menu="true">
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content d-flex align-items-center px-3">
-                                                <!--begin::Avatar-->
-                                                <div class="symbol symbol-50px me-5">
-                                                    <img alt="Logo"
-                                                        src="<%=process.env.BASE_URL%>/media/avatars/150-26.jpg" />
-                                                </div>
-                                                <!--end::Avatar-->
-                                                <!--begin::Username-->
-                                                <div class="d-flex flex-column">
-                                                    <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-                                                        <span
-                                                            class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
-                                                    </div>
-                                                    <a href="#"
-                                                        class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
-                                                </div>
-                                                <!--end::Username-->
-                                            </div>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator my-2"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5">
-                                            <a href="../../demo1/dist/account/overview.html" class="menu-link px-5">My
-                                                Profile</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5">
-                                            <a href="../../demo1/dist/pages/projects/list.html" class="menu-link px-5">
-                                                <span class="menu-text">My Projects</span>
-                                                <span class="menu-badge">
-                                                    <span
-                                                        class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
+                                        <div class="me-4">
+                                            <!--begin::Menu-->
+                                            <a href="/api/user/cart"
+                                                class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
+                                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                                <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                                                <span class="svg-icon svg-icon-2 svg-icon-gray-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z"
+                                                            fill="black" />
+                                                        <path opacity="0.3"
+                                                            d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z"
+                                                            fill="black" />
+                                                        <path opacity="0.3"
+                                                            d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z"
+                                                            fill="black" />
+                                                    </svg>
                                                 </span>
+                                                <!--end::Svg Icon-->Cart
                                             </a>
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5" data-kt-menu-trigger="hover"
-                                            data-kt-menu-placement="left-start">
-                                            <a href="#" class="menu-link px-5">
-                                                <span class="menu-title">My Subscription</span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <!--begin::Menu sub-->
-                                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/referrals.html"
-                                                        class="menu-link px-5">Referrals</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/billing.html"
-                                                        class="menu-link px-5">Billing</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/statements.html"
-                                                        class="menu-link px-5">Payments</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/statements.html"
-                                                        class="menu-link d-flex flex-stack px-5">Statements
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                            data-bs-toggle="tooltip"
-                                                            title="View your statements"></i></a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu separator-->
-                                                <div class="separator my-2"></div>
-                                                <!--end::Menu separator-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <div class="menu-content px-3">
-                                                        <label
-                                                            class="form-check form-switch form-check-custom form-check-solid">
-                                                            <input class="form-check-input w-30px h-20px"
-                                                                type="checkbox" value="1" checked="checked"
-                                                                name="notifications" />
-                                                            <span
-                                                                class="form-check-label text-muted fs-7">Notifications</span>
-                                                        </label>
+                                    </div>
+
+                                    <!--begin::User-->
+                                    <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
+                                        <!--begin::Menu wrapper-->
+                                        <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
+                                            data-kt-menu-trigger="click" data-kt-menu-attach="parent"
+                                            data-kt-menu-placement="bottom-end">
+                                            <img src="<%=process.env.BASE_URL%>/media/avatars/150-26.jpg" alt="user" />
+                                        </div>
+                                        <!--begin::Menu-->
+                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
+                                            data-kt-menu="true">
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <div class="menu-content d-flex align-items-center px-3">
+                                                    <!--begin::Avatar-->
+                                                    <div class="symbol symbol-50px me-5">
+                                                        <img alt="Logo"
+                                                            src="<%=process.env.BASE_URL%>/media/avatars/150-26.jpg" />
                                                     </div>
+                                                    <!--end::Avatar-->
+                                                    <!--begin::Username-->
+                                                    <div class="d-flex flex-column">
+                                                        <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
+                                                            <span
+                                                                class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
+                                                        </div>
+                                                        <a href="#"
+                                                            class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                                    </div>
+                                                    <!--end::Username-->
                                                 </div>
-                                                <!--end::Menu item-->
                                             </div>
-                                            <!--end::Menu sub-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5">
-                                            <a href="../../demo1/dist/account/statements.html" class="menu-link px-5">My
-                                                Statements</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator my-2"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5" data-kt-menu-trigger="hover"
-                                            data-kt-menu-placement="left-start">
-                                            <a href="#" class="menu-link px-5">
-                                                <span class="menu-title position-relative">Language
-                                                    <span
-                                                        class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-                                                        <img class="w-15px h-15px rounded-1 ms-2"
-                                                            src="<%=process.env.BASE_URL%>/media/flags/united-states.svg"
-                                                            alt="" /></span></span>
-                                            </a>
-                                            <!--begin::Menu sub-->
-                                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/settings.html"
-                                                        class="menu-link d-flex px-5 active">
-                                                        <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1"
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu separator-->
+                                            <div class="separator my-2"></div>
+                                            <!--end::Menu separator-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="../../demo1/dist/account/overview.html"
+                                                    class="menu-link px-5">My
+                                                    Profile</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="../../demo1/dist/pages/projects/list.html"
+                                                    class="menu-link px-5">
+                                                    <span class="menu-text">My Projects</span>
+                                                    <span class="menu-badge">
+                                                        <span
+                                                            class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5" data-kt-menu-trigger="hover"
+                                                data-kt-menu-placement="left-start">
+                                                <a href="#" class="menu-link px-5">
+                                                    <span class="menu-title">My Subscription</span>
+                                                    <span class="menu-arrow"></span>
+                                                </a>
+                                                <!--begin::Menu sub-->
+                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="../../demo1/dist/account/referrals.html"
+                                                            class="menu-link px-5">Referrals</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="../../demo1/dist/account/billing.html"
+                                                            class="menu-link px-5">Billing</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="../../demo1/dist/account/statements.html"
+                                                            class="menu-link px-5">Payments</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="../../demo1/dist/account/statements.html"
+                                                            class="menu-link d-flex flex-stack px-5">Statements
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="View your statements"></i></a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu separator-->
+                                                    <div class="separator my-2"></div>
+                                                    <!--end::Menu separator-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <div class="menu-content px-3">
+                                                            <label
+                                                                class="form-check form-switch form-check-custom form-check-solid">
+                                                                <input class="form-check-input w-30px h-20px"
+                                                                    type="checkbox" value="1" checked="checked"
+                                                                    name="notifications" />
+                                                                <span
+                                                                    class="form-check-label text-muted fs-7">Notifications</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                </div>
+                                                <!--end::Menu sub-->
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="../../demo1/dist/account/statements.html"
+                                                    class="menu-link px-5">My
+                                                    Statements</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu separator-->
+                                            <div class="separator my-2"></div>
+                                            <!--end::Menu separator-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5" data-kt-menu-trigger="hover"
+                                                data-kt-menu-placement="left-start">
+                                                <a href="#" class="menu-link px-5">
+                                                    <span class="menu-title position-relative">Language
+                                                        <span
+                                                            class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
+                                                            <img class="w-15px h-15px rounded-1 ms-2"
                                                                 src="<%=process.env.BASE_URL%>/media/flags/united-states.svg"
-                                                                alt="" />
-                                                        </span>English</a>
+                                                                alt="" /></span></span>
+                                                </a>
+                                                <!--begin::Menu sub-->
+                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="#" class="menu-link d-flex px-5 active">
+                                                            <span class="symbol symbol-20px me-4">
+                                                                <img class="rounded-1"
+                                                                    src="<%=process.env.BASE_URL%>/media/flags/united-states.svg"
+                                                                    alt="" />
+                                                            </span>English</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="#" class="menu-link d-flex px-5">
+                                                            <span class="symbol symbol-20px me-4">
+                                                                <img class="rounded-1"
+                                                                    src="<%=process.env.BASE_URL%>/media/flags/turkey.svg"
+                                                                    alt="" />
+                                                            </span>Turkish</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="#" class="menu-link d-flex px-5">
+                                                            <span class="symbol symbol-20px me-4">
+                                                                <img class="rounded-1"
+                                                                    src="<%=process.env.BASE_URL%>/media/flags/saudi-arabia.svg"
+                                                                    alt="" />
+                                                            </span>Arabic</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+
                                                 </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/settings.html"
-                                                        class="menu-link d-flex px-5">
-                                                        <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1"
-                                                                src="<%=process.env.BASE_URL%>/media/flags/spain.svg"
-                                                                alt="" />
-                                                        </span>Spanish</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/settings.html"
-                                                        class="menu-link d-flex px-5">
-                                                        <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1"
-                                                                src="<%=process.env.BASE_URL%>/media/flags/germany.svg"
-                                                                alt="" />
-                                                        </span>German</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/settings.html"
-                                                        class="menu-link d-flex px-5">
-                                                        <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1"
-                                                                src="<%=process.env.BASE_URL%>/media/flags/japan.svg"
-                                                                alt="" />
-                                                        </span>Japanese</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="../../demo1/dist/account/settings.html"
-                                                        class="menu-link d-flex px-5">
-                                                        <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1"
-                                                                src="<%=process.env.BASE_URL%>/media/flags/france.svg"
-                                                                alt="" />
-                                                        </span>French</a>
-                                                </div>
-                                                <!--end::Menu item-->
+                                                <!--end::Menu sub-->
                                             </div>
-                                            <!--end::Menu sub-->
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5 my-1">
+                                                <a href="#" class="menu-link px-5">Account Settings</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-5">
+                                                <a href="/api/auth/logout" class="menu-link px-5">Sign Out</a>
+                                            </div>
+
+
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5 my-1">
-                                            <a href="../../demo1/dist/account/settings.html"
-                                                class="menu-link px-5">Account Settings</a>
+                                        <!--end::Menu-->
+                                        <!--end::Menu wrapper-->
+                                    </div>
+                                    <!--end::User -->
+                                    <!--begin::Heaeder menu toggle-->
+                                    <div class="d-flex align-items-center d-lg-none ms-2 me-n3"
+                                        title="Show header menu">
+                                        <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                            id="kt_header_menu_mobile_toggle">
+                                            <!--begin::Svg Icon | path: icons/duotune/text/txt001.svg-->
+                                            <span class="svg-icon svg-icon-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <path
+                                                        d="M13 11H3C2.4 11 2 10.6 2 10V9C2 8.4 2.4 8 3 8H13C13.6 8 14 8.4 14 9V10C14 10.6 13.6 11 13 11ZM22 5V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4V5C2 5.6 2.4 6 3 6H21C21.6 6 22 5.6 22 5Z"
+                                                        fill="black" />
+                                                    <path opacity="0.3"
+                                                        d="M21 16H3C2.4 16 2 15.6 2 15V14C2 13.4 2.4 13 3 13H21C21.6 13 22 13.4 22 14V15C22 15.6 21.6 16 21 16ZM14 20V19C14 18.4 13.6 18 13 18H3C2.4 18 2 18.4 2 19V20C2 20.6 2.4 21 3 21H13C13.6 21 14 20.6 14 20Z"
+                                                        fill="black" />
+                                                </svg>
+                                            </span>
+                                            <!--end::Svg Icon-->
                                         </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5">
-                                            <a href="../../demo1/dist/authentication/flows/basic/sign-in.html"
-                                                class="menu-link px-5">Sign Out</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator my-2"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-5">
-                                            <div class="menu-content px-5">
-                                                <label
-                                                    class="form-check form-switch form-check-custom form-check-solid pulse pulse-success"
-                                                    for="kt_user_menu_dark_mode_toggle">
-                                                    <input class="form-check-input w-30px h-20px" type="checkbox"
-                                                        value="1" name="mode" id="kt_user_menu_dark_mode_toggle"
-                                                        data-kt-url="../../demo1/dist/index.html" />
-                                                    <span class="pulse-ring ms-n1"></span>
-                                                    <span class="form-check-label text-gray-600 fs-7">Dark
-                                                        Mode</span>
-                                                </label>
+                                    </div>
+                                    <!--end::Heaeder menu toggle-->
+
+
+                                    <% } else { %>
+                                        <!--begin::Wrapper-->
+                                        <div class="d-flex align-items-center py-1">
+                                            <div class="me-4">
+                                                <!--begin::Menu-->
+                                                <a href="/api/user/signup"
+                                                    class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
+                                                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                                                    <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none">
+                                                            <path
+                                                                d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
+                                                                fill="black" />
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->Register / Login
+                                                </a>
                                             </div>
                                         </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu-->
-                                    <!--end::Menu wrapper-->
-                                </div>
-                                <!--end::User -->
-                                <!--begin::Heaeder menu toggle-->
-                                <div class="d-flex align-items-center d-lg-none ms-2 me-n3" title="Show header menu">
-                                    <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
-                                        id="kt_header_menu_mobile_toggle">
-                                        <!--begin::Svg Icon | path: icons/duotune/text/txt001.svg-->
-                                        <span class="svg-icon svg-icon-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none">
-                                                <path
-                                                    d="M13 11H3C2.4 11 2 10.6 2 10V9C2 8.4 2.4 8 3 8H13C13.6 8 14 8.4 14 9V10C14 10.6 13.6 11 13 11ZM22 5V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4V5C2 5.6 2.4 6 3 6H21C21.6 6 22 5.6 22 5Z"
-                                                    fill="black" />
-                                                <path opacity="0.3"
-                                                    d="M21 16H3C2.4 16 2 15.6 2 15V14C2 13.4 2.4 13 3 13H21C21.6 13 22 13.4 22 14V15C22 15.6 21.6 16 21 16ZM14 20V19C14 18.4 13.6 18 13 18H3C2.4 18 2 18.4 2 19V20C2 20.6 2.4 21 3 21H13C13.6 21 14 20.6 14 20Z"
-                                                    fill="black" />
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                    </div>
-                                </div>
-                                <!--end::Heaeder menu toggle-->
+                                        <% } %>
                             </div>
                             <!--end::Toolbar wrapper-->
                         </div>

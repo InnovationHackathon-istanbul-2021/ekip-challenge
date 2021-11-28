@@ -18,8 +18,18 @@ const getUsers = async (req, res) => {
     const users = await userModel.find({});
 
     if (users.length > 0) {
-        //response.status(200).json(users);
-        res.json(users);
+        res.status(200).json(users);
+        // response.render("dashboard/users", { users: users });
+    } else {
+        response.status(404).json('no users found');
+    }
+};
+
+const getCustomers = async (req, res) => {
+    const users = await userModel.find({ role: 'customer' });
+
+    if (users.length > 0) {
+        res.status(200).json(users);
         // response.render("dashboard/users", { users: users });
     } else {
         response.status(404).json('no users found');
@@ -60,5 +70,6 @@ module.exports = {
     signUpUser,
     signInUser,
     userProfile,
-    getProfile
+    getProfile,
+    getCustomers
 };
