@@ -25,7 +25,7 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
     };
 
     const token = jwt.sign(userInToken, SECRET_KEY, {
-        expiresIn: '1s',
+        expiresIn: '1h',
     });
 
     res.cookie('token', token, {
@@ -38,12 +38,15 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
 // get the current logged in user
 routes.get('/myprofile', checkAuth, (req, res) => {
     const { name, email, profilePicture } = req.user;
+
     const clientUser = {
         name: name,
         email: email,
         profilePicture: profilePicture,
     };
-    res.status(200).render(clientUser);
+
+    console.log(req.user);
+    res.status(200).json(clientUser);
 });
 
 routes.get('/logout', checkAuth, (req, res) => {

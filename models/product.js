@@ -20,8 +20,11 @@ const Product = new mongoose.Schema({
     isAvailable: {
         type: Boolean,
         required: true
+    },
+    category: {
+        type: [String],
+        required: true
     }
-
 });
 
 module.exports = mongoose.model("products", Product);

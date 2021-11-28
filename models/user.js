@@ -24,6 +24,10 @@ const User = new mongoose.Schema({
     },
     address: {
         type: String
+    },
+    orders: {
+        type: Array,
+        default: []
     }
 });
 

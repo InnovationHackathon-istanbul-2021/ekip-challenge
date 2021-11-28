@@ -1,4 +1,6 @@
 const orderModel = require("../models/order");
+const { checkAuth } = require('../middleware/auth');
+
 
 const getOrders = async (request, response) => {
     const orders = await orderModel.find({});
@@ -109,5 +111,5 @@ const updateStock = (cartObject) => {
 module.exports = {
     getOrders,
     // addToCart,
-    // placeOrder
+    placeOrder
 };
