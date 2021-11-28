@@ -8,7 +8,7 @@ passport.use(
         {
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: 'http://localhost:3000/api/auth/google/callback',
+            callbackURL: 'https://stark-reaches-70767.herokuapp.com/api/auth/googe/callback',
         },
         async (accessToken, refreshToken, profile, callBack) => {
             const currentUser = await userModel.findOne({ providerID: profile.id });
