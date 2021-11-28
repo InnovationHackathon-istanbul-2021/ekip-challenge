@@ -29,8 +29,7 @@ const getCustomers = async (req, res) => {
     const users = await userModel.find({ role: 'customer' });
 
     if (users.length > 0) {
-        res.status(200).json(users);
-        // response.render("dashboard/users", { users: users });
+        res.render("dashboard/customers", { users: users });
     } else {
         res.status(404).json('no users found');
     }

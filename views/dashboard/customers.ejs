@@ -1,0 +1,62 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+            <div class="post d-flex flex-row-fluid" id="kt_post">
+
+                <div class="card-body py-3">
+                    <!--begin::Table container-->
+                    <div class="table-responsive">
+                        <!--begin::Table-->
+                        <table class="table align-middle gs-0 gy-4">
+                            <!--begin::Table head-->
+                            <thead>
+                                <tr class="fw-bolder text-muted bg-light">
+                                    <th class="ps-4 min-w-300px rounded-start">User</th>
+                                    <th class="min-w-125px">Email</th>
+                                    <th class="min-w-125px">Profile Picture</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr method="get">
+                                    <% if(locals.users) { %>
+                                        <%users.forEach(user=> { %>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+
+                                                    <div class="d-flex justify-content-start flex-column">
+                                                        <a href="#"
+                                                            class="text-dark fw-bolder text-hover-primary mb-1 fs-6">
+                                                            <%=user.name%>
+                                                        </a>
+                                                    </div>
+                                            </td>
+                                            <td>
+                                                <a href="#"
+                                                    class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">
+                                                    <%=user.email%>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <div class="symbol symbol-50px me-5">
+                                                    <span class="symbol-label bg-light">
+                                                        <img class="card-img-top" src="<%= user ? user.picture : '' %>">
+                                                    </span>
+                                                </div>
+                                            </td>
+
+                                            <%});%>
+                                                <%}%>
+                                </tr>
+                            </tbody>
+                            <!--end::Table body-->
+                        </table>
+                        <!--end::Table-->
+                    </div>
+                    <!--end::Table container-->
+                    <!--begin::Body-->
+                </div>
+            </div>
+        </div>
+        <%- include('../partials/footer') %>

@@ -10,6 +10,16 @@ const getProducts = async (req, res) => {
     }
 };
 
+const manageProducts = async (req, res) => {
+    const products = await productModel.find({});
+
+    if (products.length > 0) {
+        res.status(200).render('dashboard/edit-products', { products, products });
+    } else {
+        res.status(404).json('no users found');
+    }
+};
+
 const addProduct = async (req, res) => {
     const { name, price, image, description, isAvailable, category } = req.body;
 
@@ -111,5 +121,6 @@ module.exports = {
     addProduct,
     updateProduct,
     deleteProduct,
-    filterProducts
+    filterProducts,
+    manageProducts
 };

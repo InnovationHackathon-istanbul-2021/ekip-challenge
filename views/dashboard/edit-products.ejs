@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+            <div class="post d-flex flex-row-fluid" id="kt_post">
+                <div class="table-responsive">
+                    <table class="table table-striped gy-7 gs-7">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>isAvailable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(locals.products) { %>
+                                <%products.forEach(product=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= product.name %>
+                                        </td>
+                                        <td>
+                                            <%= product.price %>
+                                        </td>
+                                        <td>
+                                            <%= product.description %>
+                                        </td>
+                                        <td>
+                                            <%= product.isAvailable %>
+                                        </td>
+
+                                    </tr>
+
+                                    <%});%>
+                                        <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
