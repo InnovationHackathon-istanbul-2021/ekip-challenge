@@ -22,7 +22,7 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
     };
 
     const token = jwt.sign(userInToken, SECRET_KEY, {
-        expiresIn: '1s',
+        expiresIn: '15m',
     });
 
     res.cookie('token', token, {
@@ -30,7 +30,7 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
     });
 
 
-    res.redirect('/api/user/myprofile');
+    res.redirect('/'); //FIXME maybe render not redirect
 });
 
 routes.get('/logout', checkAuth, (req, res) => {

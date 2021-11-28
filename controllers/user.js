@@ -24,7 +24,7 @@ const getProfile = async (req, res) => {
 
     const currentUser = await userModel.findOne({ _id: id });
 
-    console.log(currentUser);
+    console.log('here in user controller', currentUser);
     if (currentUser) {
         // create an array for each orders and fetch each order 
         const ordersWithProducts = [];
