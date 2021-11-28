@@ -5,13 +5,8 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 
 const connectToMongo = require("./database/connection");
-const { checkAuth } = require('./middleware/auth');
 
 const apiRoutes = require('./routes');
-
-const path = require('path');
-
-
 
 const app = express();
 const port = process.env.NODE_LOCAL_PORT;

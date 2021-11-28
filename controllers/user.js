@@ -2,7 +2,7 @@ const userModel = require("../models/user");
 const orderModel = require("../models/order");
 const productModel = require("../models/product");
 
-const signupUser = async (req, res) => {
+const signUpUser = async (req, res) => {
     res.render("auth/signup");
 };
 
@@ -57,7 +57,8 @@ const getProfile = async (req, res) => {
 
 module.exports = {
     getUsers,
-    signupUser,
+    signUpUser,
     signInUser,
-    userProfile
+    userProfile,
+    getProfile
 };
