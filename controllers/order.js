@@ -4,7 +4,7 @@ const getOrders = async (request, response) => {
     const orders = await orderModel.find({});
 
     if (orders.length > 0) {
-        response.status(200).json(orders);
+        response.status(200).render("order/orders", {orders: orders});
     } else {
         response.status(404).json('no orders found');
     }
