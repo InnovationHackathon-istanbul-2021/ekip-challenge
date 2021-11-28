@@ -17,6 +17,7 @@ const User = new mongoose.Schema({
     },
     role: {
         type: String,
+        default: 'customer',
         required: true
     },
     phone: {
@@ -24,6 +25,14 @@ const User = new mongoose.Schema({
     },
     address: {
         type: String
+    },
+    orders: {
+        type: Array,
+        default: []
+    },
+    providerID: {
+        type: String,
+        required: true
     }
 });
 

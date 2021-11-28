@@ -14,36 +14,23 @@ routes.get(
 );
 
 routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
-    const { _id, name, email, profilePicture } = req.user;
+    const { _id } = req.user;
 
     const userInToken = {
         id: _id,
-        name: name,
-        email: email,
-        profilePicture: profilePicture,
-        cart: []
+        cart: [{}]
     };
 
     const token = jwt.sign(userInToken, SECRET_KEY, {
-        expiresIn: '1s',
+        expiresIn: '15m',
     });
 
     res.cookie('token', token, {
         httpOnly: true,
     });
 
-    res.redirect('/');
-});
 
-// get the current logged in user
-routes.get('/myprofile', checkAuth, (req, res) => {
-    const { name, email, profilePicture } = req.user;
-    const clientUser = {
-        name: name,
-        email: email,
-        profilePicture: profilePicture,
-    };
-    res.status(200).render(clientUser);
+    res.redirect('/'); //FIXME maybe render not redirect
 });
 
 routes.get('/logout', checkAuth, (req, res) => {
