@@ -1,17 +1,33 @@
 const mongoose = require("mongoose");
 
+const Item = new mongoose.Schema({
+    productRef: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+    },
+    quantity: {
+        type: Number,
+        required: true
+    }
+});
+
 const Order = new mongoose.Schema({
     totalPrice: {
         type: Number,
         required: true
     },
-    productRef: {
+    items: {
+        type: [Item],
+        required: true
+    },
+    userRef: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
     },
-    userRef: {
-        type: mongoose.Schema.Types.ObjectId
-    },
+    status: {
+        type: String,
+        default: 'Pending'
+    }
 });
 
 
