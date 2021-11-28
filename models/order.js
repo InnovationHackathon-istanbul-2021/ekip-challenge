@@ -10,7 +10,8 @@ const Order = new mongoose.Schema({
         required: true,
     },
     userRef: {
-        type: mongoose.Schema.Types.ObjectId
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
     },
 });
 

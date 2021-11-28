@@ -21,6 +21,7 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
         name: name,
         email: email,
         profilePicture: profilePicture,
+        cart: []
     };
 
     const token = jwt.sign(userInToken, SECRET_KEY, {
@@ -36,17 +37,20 @@ routes.get('/google/callback', passport.authenticate('google'), (req, res) => {
 
 // get the current logged in user
 routes.get('/myprofile', checkAuth, (req, res) => {
-    const { name, email, profilePicture } = req.user;
+    const { username, email, picture, phone, address, orders } = req.user;
     const clientUser = {
-        name: name,
+        username: username,
         email: email,
-        profilePicture: profilePicture,
+        picture: picture,
+        phone: phone,
+        address: address,
+        orders: orders
     };
-    res.status(200).json(clientUser);
+    res.status(200).render("views/auth/profile1", {clientUser: clientUser, products: products});
 });
 
 routes.get('/logout', checkAuth, (req, res) => {
-    res.clearCookie('token').sendStatus(200).redirect('/');
+    res.clearCookie('token').status(200).redirect('/');
 });
 
 module.exports = routes;
