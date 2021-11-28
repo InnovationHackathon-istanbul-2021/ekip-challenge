@@ -2,9 +2,16 @@ const userModel = require("../models/user");
 const orderModel = require("../models/order");
 const productModel = require("../models/product");
 
-
 const signupUser = async (req, res) => {
     res.render("auth/signup");
+};
+
+const signInUser = async (req, res) => {
+    res.render("auth/signin");
+};
+
+const userProfile = async (req, res) => {
+    res.render("auth/profile1");
 };
 
 const getUsers = async (req, res) => {
@@ -51,5 +58,6 @@ const getProfile = async (req, res) => {
 module.exports = {
     getUsers,
     signupUser,
-    getProfile
+    signInUser,
+    userProfile
 };
