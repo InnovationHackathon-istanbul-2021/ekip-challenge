@@ -21,7 +21,6 @@ const Product = new mongoose.Schema({
         type: Boolean,
         required: true
     }
-
 });
 
 module.exports = mongoose.model("products", Product);

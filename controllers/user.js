@@ -8,9 +8,9 @@ const signInUser = async(req, res) => {
     res.render("auth/signin");
 };
 
-const userProfile = async(req, res) => {
+/*const userProfile = async(req, res) => {
     res.render("auth/profile1");
-};
+};*/
 
 const getUsers = async (request, response) => {
     const users = await userModel.find({});
@@ -28,6 +28,6 @@ const getUsers = async (request, response) => {
 module.exports = {
     getUsers,
     signupUser,
-    signInUser,
-    userProfile
+    signInUser
+    //userProfile
 };
