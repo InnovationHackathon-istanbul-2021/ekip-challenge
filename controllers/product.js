@@ -4,7 +4,7 @@ const getProducts = async (req, res) => {
     const products = await productModel.find({});
 
     if (products.length > 0) {
-        res.status(200).json(products);
+        res.status(200).render('dashboard/products', { products, products });
     } else {
         res.status(404).json('no users found');
     }
