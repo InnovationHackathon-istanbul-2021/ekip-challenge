@@ -20,6 +20,10 @@ const Product = new mongoose.Schema({
     isAvailable: {
         type: Boolean,
         required: true
+    },
+    category: {
+        type: [String],
+        required: true
     }
 });
 
