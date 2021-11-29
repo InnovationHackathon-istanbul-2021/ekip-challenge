@@ -1,7 +1,7 @@
 # ekip-challenge
 
 - nodejs based solution demo: https://stark-reaches-70767.herokuapp.com/
-- wix based demo: https://www.ekiplatformu.net/
+- wix based solution demo: https://www.ekiplatformu.net/
 
 Stack:
 - nodejs
@@ -10,7 +10,7 @@ Stack:
 - ejs
 
 
-# instruction to run
+# instructions to run
 
 - clone repo
 - cd repo folder
